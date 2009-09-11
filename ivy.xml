@@ -1,0 +1,14 @@
+<ivy-module version="2.0">
+    <info organisation="ibs.XMLUtil" module="XMLUtil"/>   
+    <publications>
+    	<artifact type="jar" ext="jar"  />
+    	<artifact type="pom" ext="pom"  />
+	</publications> 
+    <dependencies>
+
+	<dependency org="com.ximpleware" name="vtd-xml" rev="2.5" />
+	<dependency org="log4j" name="log4j" rev="1.2.13" />
+
+	<dependency org="ibs.util.IBSUtil" name="IBSUtil" rev="0.0.10" transitive="false" />
+    </dependencies>
+</ivy-module>

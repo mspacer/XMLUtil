@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="**/.svn/" kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/IBSUtil"/>
+	<classpathentry kind="var" path="M2_REPO/log4j/log4j/1.2.14/log4j-1.2.14.jar"/>
+	<classpathentry kind="var" path="M2_REPO/com/ximpleware/vtdxml_java/1.4/vtdxml_java1.4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
