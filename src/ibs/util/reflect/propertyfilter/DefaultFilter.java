@@ -16,7 +16,8 @@ public final class DefaultFilter extends FilterChain {
 	}
 
 	public boolean accept(Class clazz, PropertyDescriptor property) {
-		return !Skippable.class.isAssignableFrom(property.getPropertyType());
+		Class propertyType = property.getPropertyType();
+		return null != propertyType && !Skippable.class.isAssignableFrom(propertyType);
 	}
 
 	/**
