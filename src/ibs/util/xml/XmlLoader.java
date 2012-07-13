@@ -44,8 +44,9 @@ import java.util.regex.Pattern;
  * @author mkarajani
  */
 public final class XmlLoader {
-	private static final Pattern includePattern = Pattern.compile("<\\?\\s*include\\s+file\\s*=\\s*\"([^\"]+)\"((?:\\s+\\w+\\s*=\\s*\"[^\"]+\")*)\\s*\\?>");
-	private static final Pattern paramPattern = Pattern.compile("\\s+(\\w+)\\s*=\\s*\"([^\"]+)\"");
+	private static final String ATTR_NAME_EXPRESSION = "[\\w-]+"; 
+	private static final Pattern includePattern = Pattern.compile("<\\?\\s*include\\s+file\\s*=\\s*\"([^\"]+)\"((?:\\s+"+ATTR_NAME_EXPRESSION+"\\s*=\\s*\"[^\"]+\")*)\\s*\\?>");
+	private static final Pattern paramPattern = Pattern.compile("\\s+("+ATTR_NAME_EXPRESSION+")\\s*=\\s*\"([^\"]+)\"");
 
 	private XmlLoader() {
 	}
@@ -66,7 +67,7 @@ public final class XmlLoader {
 			String pattern = load(include, encoding);
 			Matcher params = paramPattern.matcher(matcher.group(2));
 			while(params.find()) {
-				pattern = pattern.replaceAll("\\$"+params.group(1)+"(?!\\w+)", regexEscape(params.group(2)));
+				pattern = pattern.replaceAll("\\$"+params.group(1)+"(?!"+ATTR_NAME_EXPRESSION+")", regexEscape(params.group(2)));
 			}
 			matcher.appendReplacement(result, regexEscape(pattern));
 		}
@@ -89,8 +90,5 @@ public final class XmlLoader {
 	public static String load(String filePath, String encoding) throws IOException {
 		return load(new File(filePath), encoding);
 	}
-	
-	
-	
 
 }
