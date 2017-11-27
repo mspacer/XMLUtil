@@ -1,0 +1,29 @@
+apply plugin: 'java'
+apply from: 'http://dir-helper/artifactory/inhouse/ibs/ci/gradle/scripts/common/release/common-release.gradle'
+
+sourceCompatibility = 1.4
+targetCompatibility = 1.4              
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+             
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'src'
+            exclude '**/*.java'
+        }
+    }
+}
+
+dependencies {                     
+	compile 'com.ximpleware:vtd-xml:2.5'
+	compile 'ibs.util.IBSUtil:IBSUtil:0.0.10'
+	compile 'log4j:log4j:1.2.14'    
+}
+
+jar {
+}
