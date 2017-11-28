@@ -1,11 +1,14 @@
 apply plugin: 'java'
-/*apply from: 'http://dir-helper/artifactory/inhouse/ibs/ci/gradle/scripts/common/release/common-release.gradle'*/
 
 sourceCompatibility = 1.4
 targetCompatibility = 1.4              
 compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = 'UTF-8'
-             
+
+repositories {
+    maven { url "http://192.168.2.109:8081/artifactory/all" }
+}             
+
 
 sourceSets {
     main {
@@ -26,4 +29,12 @@ dependencies {
 }
 
 jar {
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+               repository(url: "http://192.168.2.109:8081/artifactory/inhouse")
+        }
+    }
 }
