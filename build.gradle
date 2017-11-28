@@ -35,7 +35,11 @@ jar {
 uploadArchives {
     repositories {
         mavenDeployer {
-               repository(url: "http://192.168.2.111:8081/artifactory/inhouse")
+            if(project.version.endsWith('-SNAPSHOT')) {
+                repository(url: "http://dir-helper/artifactory/inhouse.snapshot")
+            } else {
+                repository(url: "http://dir-helper/artifactory/inhouse")
+            }
         }
     }
 }
