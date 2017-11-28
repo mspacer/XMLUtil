@@ -1,5 +1,5 @@
 apply plugin: 'java'
-apply from: 'http://dir-helper/artifactory/inhouse/ibs/ci/gradle/scripts/common/release/common-release.gradle'
+/*apply from: 'http://dir-helper/artifactory/inhouse/ibs/ci/gradle/scripts/common/release/common-release.gradle'*/
 
 sourceCompatibility = 1.4
 targetCompatibility = 1.4              
