@@ -1,5 +1,4 @@
 apply plugin: 'java'
-apply plugin: "maven" 
 
 sourceCompatibility = 1.4
 targetCompatibility = 1.4              
@@ -7,7 +6,7 @@ compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = 'UTF-8'
 
 repositories {
-    maven { url "http://192.168.2.109:8081/artifactory/all" }
+    maven { url "http://192.168.2.111:8081/artifactory/all" }
 }             
 
 
@@ -35,7 +34,7 @@ jar {
 uploadArchives {
     repositories {
         mavenDeployer {
-               repository(url: "http://192.168.2.109:8081/artifactory/inhouse")
+               repository(url: "http://192.168.2.111:8081/artifactory/inhouse")
         }
     }
 }
