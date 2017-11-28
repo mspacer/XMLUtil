@@ -36,9 +36,9 @@ uploadArchives {
     repositories {
         mavenDeployer {
             if(project.version.endsWith('-SNAPSHOT')) {
-                repository(url: "http://dir-helper/artifactory/inhouse.snapshot")
+                repository(url: "http://192.168.2.111:8081/artifactory/inhouse.snapshot")
             } else {
-                repository(url: "http://dir-helper/artifactory/inhouse")
+                repository(url: "http://192.168.2.111:8081/artifactory/inhouse")
             }
         }
     }
