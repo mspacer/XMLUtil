@@ -1,14 +1,16 @@
 apply plugin: 'java'
 apply plugin: "maven"
 
+apply from: 'http://192.168.2.111:8081/artifactory/test/build.gradle'
+
 sourceCompatibility = 1.4
 targetCompatibility = 1.4              
 compileJava.options.encoding = 'UTF-8'
 compileTestJava.options.encoding = 'UTF-8'
 
-repositories {
+/*repositories {
     maven { url "http://192.168.2.111:8081/artifactory/all" }
-}             
+} */            
 
 
 sourceSets {
